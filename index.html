@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sreekanth Kopuri | Poet | Scholar | Educator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --bg-color: #fdfaf6;
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --text-color: #2d2d2d;
+            --link-color: #c69c6d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--link-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--link-color);
+            color: var(--link-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--link-color);
+            color: white;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-size: 2.5rem;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--link-color);
+            margin: 1rem auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .poem-quote {
+            font-style: italic;
+            opacity: 0.8;
+            margin: 2rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .poem-quote:before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            left: -1rem;
+            top: -1rem;
+            opacity: 0.2;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(253, 250, 246, 0.9);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(253, 250, 246, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--link-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--primary-color);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--link-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--link-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('img.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-quote {
+            font-style: italic;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down i {
+            font-size: 2rem;
+            color: white;
+            opacity: 0.7;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--link-color);
+            box-shadow: var(--shadow);
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .typewriter {
+            border-right: 3px solid var(--link-color);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        /* Work Section */
+        .work {
+            background-color: var(--bg-color);
+        }
+
+        .work-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            border-bottom: 3px solid var(--link-color);
+            color: var(--link-color);
+        }
+
+        .tab-btn:hover {
+            color: var(--link-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: var(--link-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            position: relative;
+            width: 50%;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:before {
+            right: auto;
+            left: -10px;
+            border-left: none;
+            border-right: 10px solid white;
+        }
+
+        .timeline-date {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .timeline-date i {
+            margin-right: 0.5rem;
+        }
+
+        /* Publications Section */
+        .publications {
+            background-color: white;
+        }
+
+        .publication-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            background: none;
+            border: 1px solid var(--link-color);
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--link-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--link-color);
+            color: white;
+        }
+
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .publication-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .publication-card:hover .publication-img img {
+            transform: scale(1.1);
+        }
+
+        .publication-info {
+            padding: 1.5rem;
+        }
+
+        .publication-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .publication-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--bg-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--link-color);
+            margin-right: 1rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--link-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(198, 156, 109, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--link-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--link-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--link-color); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                margin-bottom: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--bg-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .timeline:before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content:before {
+                right: auto;
+                left: 20px;
+                border-left: none;
+                border-right: 10px solid white;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .work-tabs, .publication-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn, .filter-btn {
+                margin: 0.5rem 0;
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Dr. <span>Kopuri</span></div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Dr. Sreekanth Kopuri</h1>
+            <p>Poet | Scholar | Editor | Educator</p>
+            <p class="hero-quote">"Poetry is the silence between two thoughts."</p>
+            <div class="hero-btns">
+                <a href="#work" class="btn">Explore Portfolio</a>
+                <a href="#" class="btn btn-outline">Download CV</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="profile.jpg" alt="Dr. Sreekanth Kopuri">
+                </div>
+                <div class="about-text">
+                    <h2>Internationally Acclaimed Poet & Scholar</h2>
+                    <div class="typewriter" id="typewriter"></div>
+                    <p>Dr. Sreekanth Kopuri is an internationally published poet, Pushcart Prize nominee, and scholar whose works have been translated into multiple languages. His poetry explores the intersections of culture, identity, and the human experience.</p>
+                    <p>As an editor, he has worked with prestigious literary journals and anthologies, bringing contemporary voices to the forefront of global literature. His research focuses on postcolonial poetry and the transformative power of language.</p>
+                    <p>A passionate educator, Dr. Kopuri has taught creative writing and literature at universities worldwide, mentoring emerging writers and fostering cross-cultural dialogue through poetry.</p>
+                    <div class="poem-quote">
+                        "Language is the house of being. In its home man dwells."<br>
+                        - Inspired by Heidegger
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work" id="work">
+        <div class="container">
+            <h2 class="section-title">Work & Achievements</h2>
+            <div class="work-tabs">
+                <button class="tab-btn active" data-tab="poetry">Poetry</button>
+                <button class="tab-btn" data-tab="research">Research</button>
+                <button class="tab-btn" data-tab="talks">Talks</button>
+                <button class="tab-btn" data-tab="editorial">Editorial Work</button>
+            </div>
+
+            <div class="tab-content active" id="poetry">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-book"></i> 2023
+                            </div>
+                            <h3>"The Ocean of My Mind"</h3>
+                            <p>Published by HarperCollins India, this collection explores themes of memory, migration, and cultural identity through lyrical narratives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-award"></i> 2022
+                            </div>
+                            <h3>Pushcart Prize Nomination</h3>
+                            <p>Nominated for the prestigious Pushcart Prize for the poem "Borders of Breath" published in The Kenyon Review.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-globe"></i> 2021
+                            </div>
+                            <h3>International Poetry Festival</h3>
+                            <p>Featured poet at the Jaipur International Poetry Festival, sharing the stage with Nobel laureates and celebrated poets from 30 countries.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-book"></i> 2019
+                            </div>
+                            <h3>"Whispers of the Dawn"</h3>
+                            <p>Bilingual poetry collection (English/Telugu) that won the Sahitya Akademi Yuva Puraskar for emerging writers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="research">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-graduation-cap"></i> 2023
+                            </div>
+                            <h3>"Postcolonial Poetics of Resistance"</h3>
+                            <p>Published in the Journal of Commonwealth Literature, this paper examines how contemporary poets from former colonies use language as a tool of resistance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-university"></i> 2021
+                            </div>
+                            <h3>Visiting Research Fellowship</h3>
+                            <p>Oxford Centre for Global South Studies, researching the intersection of oral traditions and modern poetry in South Asia.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-book-open"></i> 2018
+                            </div>
+                            <h3>Doctoral Dissertation</h3>
+                            <p>"The Polyphonic Imagination: Multilingual Poetics in Contemporary Indian Literature" awarded distinction at EFL University.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="talks">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-microphone"></i> May 2023
+                            </div>
+                            <h3>Keynote Speaker - PEN World Voices Festival</h3>
+                            <p>"The Poet as Cultural Translator" - New York, USA</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-chalkboard-teacher"></i> March 2023
+                            </div>
+                            <h3>Workshop - Iowa Writers' Workshop</h3>
+                            <p>"Writing Between Languages: Poetry in Multilingual Contexts" - Iowa City, USA</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-globe-asia"></i> November 2022
+                            </div>
+                            <h3>Panelist - Singapore Writers Festival</h3>
+                            <p>"Decolonizing the Literary Imagination" - Singapore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="editorial">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-edit"></i> 2021-Present
+                            </div>
+                            <h3>Editor-in-Chief - The Transnational Poet</h3>
+                            <p>Quarterly journal featuring poetry and essays from emerging and established writers across the Global South.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-book"></i> 2020
+                            </div>
+                            <h3>Guest Editor - Modern Poetry in Translation</h3>
+                            <p>Special issue on "Contemporary Telugu Poetry in English Translation" featuring 15 poets.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">
+                                <i class="fas fa-project-diagram"></i> 2018-2020
+                            </div>
+                            <h3>Associate Editor - Muse India</h3>
+                            <p>Literary e-journal showcasing Indian writing in English and regional languages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications" id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publication-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="international">International</button>
+                <button class="filter-btn" data-filter="national">National</button>
+                <button class="filter-btn" data-filter="poetry">Poetry</button>
+                <button class="filter-btn" data-filter="translation">Translation</button>
+            </div>
+            <div class="publication-grid">
+                <div class="publication-card" data-category="international poetry">
+                    <div class="publication-img">
+                        <img src="publication1.jpg" alt="The Kenyon Review">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Borders of Breath</h3>
+                        <div class="publication-meta">
+                            <span>The Kenyon Review</span>
+                            <span>2022</span>
+                        </div>
+                        <p>Poem exploring the liminal spaces between languages and identities.</p>
+                    </div>
+                </div>
+                <div class="publication-card" data-category="national poetry">
+                    <div class="publication-img">
+                        <img src="publication2.jpg" alt="Indian Quarterly">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Monsoon Ghazals</h3>
+                        <div class="publication-meta">
+                            <span>Indian Quarterly</span>
+                            <span>2021</span>
+                        </div>
+                        <p>Series of ghazals blending classical form with contemporary themes.</p>
+                    </div>
+                </div>
+                <div class="publication-card" data-category="international research">
+                    <div class="publication-img">
+                        <img src="publication3.jpg" alt="Journal of Postcolonial Writing">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Vernacular Modernisms</h3>
+                        <div class="publication-meta">
+                            <span>Journal of Postcolonial Writing</span>
+                            <span>2020</span>
+                        </div>
+                        <p>Critical essay on regional language modernisms in Indian poetry.</p>
+                    </div>
+                </div>
+                <div class="publication-card" data-category="translation">
+                    <div class="publication-img">
+                        <img src="publication4.jpg" alt="Asymptote Journal">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Telugu Modernist Poetry</h3>
+                        <div class="publication-meta">
+                            <span>Asymptote Journal</span>
+                            <span>2019</span>
+                        </div>
+                        <p>Translations of 20th century Telugu modernist poets.</p>
+                    </div>
+                </div>
+                <div class="publication-card" data-category="international poetry">
+                    <div class="publication-img">
+                        <img src="publication5.jpg" alt="Poetry London">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Cartographies of Silence</h3>
+                        <div class="publication-meta">
+                            <span>Poetry London</span>
+                            <span>2018</span>
+                        </div>
+                        <p>Sequence of poems shortlisted for the Poetry London Prize.</p>
+                    </div>
+                </div>
+                <div class="publication-card" data-category="national research">
+                    <div class="publication-img">
+                        <img src="publication6.jpg" alt="The Book Review">
+                    </div>
+                    <div class="publication-info">
+                        <h3>Bhasha Literature Today</h3>
+                        <div class="publication-meta">
+                            <span>The Book Review</span>
+                            <span>2017</span>
+                        </div>
+                        <p>Critical survey of contemporary Indian language literatures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sreekanth.kopuri@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9876543210</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Machilipatnam, Andhra Pradesh, India</span>
+                    </div>
+                    <div class="poem-quote">
+                        "Words find their meaning when shared."
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Dr. <span>Kopuri</span></div>
+                    <p>Internationally acclaimed poet, scholar, editor, and educator dedicated to the transformative power of words.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Publications</h3>
+                    <ul>
+                        <li><a href="#">The Ocean of My Mind</a></li>
+                        <li><a href="#">Whispers of the Dawn</a></li>
+                        <li><a href="#">Selected Translations</a></li>
+                        <li><a href="#">Critical Essays</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Dr. Sreekanth Kopuri. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Sticky Header
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Back to Top Button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Work Tabs
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons and content
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Publication Filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const publicationCards = document.querySelectorAll('.publication-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active filter button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter publications
+                    publicationCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Typewriter Effect
+            const typewriterElement = document.getElementById('typewriter');
+            const phrases = [
+                "Pushcart Prize Nominee",
+                "International Poet",
+                "Literary Editor",
+                "University Professor",
+                "Translator"
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let isEnd = false;
+            
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isEnd = true;
+                    isDeleting = true;
+                    setTimeout(typeWriter, 1500);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeWriter, 500);
+                } else {
+                    const speed = isDeleting ? 100 : 150;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            
+            // Start the typewriter effect after a delay
+            setTimeout(typeWriter, 1000);
+
+            // Form Validation
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if (name && email && message) {
+                    alert('Thank you for your message. Dr. Kopuri will respond soon.');
+                    contactForm.reset();
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            });
+
+            // Scroll Animation for Timeline Items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            function checkScroll() {
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    if (itemTop < window.innerHeight - 100) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check
+            checkScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+</body>
+</html>
